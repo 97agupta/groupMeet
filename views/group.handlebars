@@ -4,22 +4,22 @@
     </head>
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-S7YMK1xjUjSpEnF4P8hPUcgjXYLZKK3fQW1j5ObLSl787II9p8RO9XUGehRmKsxd" crossorigin="anonymous">
     <body class="container">
-        <h2>Welcome {{name}}</h2>
+        <h2>Welcome {{user}}</h2>
         <a class="btn btn-success" href="groupCreator">Find a Group</a>
         <div class="well" style="margin-top: 15px">
         <h4>Current Groups</h4>
         <ul>
-            <li><a href="studyGroup">{{group_name}}</a></li>
-            <li><a href="studyGroup">{{group_name}}</a></li>
-            <li><a href="studyGroup">{{group_name}}</a></li>
-            <li><a href="studyGroup">{{group_name}}</a></li>
+          {{#each current_groups}}
+            <li><a href="studyGroup">{{name}}</a></li>
+          {{/each}}
         </ul>
         </div>
         <div class="well">
         <h4>Past Groups</h4>
           <ul>
-              <li><a href="studyGroup">{{group_name}}</a></li>
-              <li><a href="studyGroup">{{group_name}}</a></li>
+            {{#each old_groups}}
+              <li><a href="studyGroup">{{name}}</a></li>
+            {{/each}}
           </ul>
         </div>
         <a class="btn btn-default" href="group">Home</a>

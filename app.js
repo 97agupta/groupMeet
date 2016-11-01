@@ -47,7 +47,7 @@ app.get('/group', group.view);
 app.get('/profile', profile.view);
 app.get('/studyGroup', studyGroup.view);
 app.get('/other_profile', other_profile.view);
-app.get('/groupCreator', groupCreator.view); 
+app.get('/groupCreator', groupCreator.view);
 // Example route
 // app.get('/users', user.list);
 
