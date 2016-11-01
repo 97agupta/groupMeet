@@ -1,9 +1,6 @@
-//var data = require('../data.json');
+var data = require('../group.json');
 
 exports.view = function(req, res){
 	//console.log(data);
-	res.render('group', {
-    'name': 'Aman Gupta',
-    'group_name': "SAMPLE GROUP NAME"
-  });
+	res.render('group', data);
 };
