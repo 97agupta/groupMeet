@@ -5,7 +5,7 @@
 
   "repository": {
     "type": "git",
-    "url": "https://github.com/IntroHCI/lab5"
+    "url": "https://github.com/IntroHCI/lab4"
   },
   "license": "MIT",
 
@@ -15,7 +15,9 @@
   },
   "dependencies": {
     "express": "3.x",
-    "express3-handlebars": "*"
+    "express3-handlebars": "*",
+    "mongodb": "*",
+    "mongoose": "*"
   },
   "engines": {
     "node": "0.10.x"

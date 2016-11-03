@@ -8,22 +8,19 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-var index = require('./routes/index');
+/**
+ * Controller variables.
+ */
+var home = require('./routes/home');
+var user = require('./routes/user');
 var group = require('./routes/group');
-var signup = require('./routes/signup');
-var profile = require('./routes/profile');
-var studyGroup = require('./routes/studyGroup');
-var other_profile = require('./routes/other_profile');
-var groupCreator = require('./routes/groupCreator');
-// Example route
-// var user = require('./routes/user');
 
 var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', handlebars());
+app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -41,13 +38,14 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', index.view);
-app.get('/signup', signup.view);
-app.get('/group', group.view);
-app.get('/profile', profile.view);
-app.get('/studyGroup', studyGroup.view);
-app.get('/other_profile', other_profile.view);
-app.get('/groupCreator', groupCreator.view);
+app.get('/', home.show);
+app.get('/users/new', user.create);
+app.get('/groups/all/', group.all);
+app.get('/users/:id/', user.show);
+app.get('/groups/:id/', group.show);
+app.get('/groups/new', group.create);
+
+app.locals.current_user_id = 1;
 // Example route
 // app.get('/users', user.list);
 

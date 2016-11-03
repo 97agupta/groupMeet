@@ -1,0 +1,49 @@
+<h2>Get me a group!</h2>
+<div class="well">
+<form>
+
+    <div class="form-group">
+      <label class="control-label">Course Name</label>
+      <select class="form-control" id="select">
+        {{#each courses}}
+          <option>{{name}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+      <div class="form-group">
+        <label class="control-label">Frequency</label>
+          <select class="form-control" id="select">
+            <option>once a week</option>
+            <option>twice a week</option>
+            <option>3 times a week</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Comfort Level with Material</label>
+        <select class="form-control" id="select">
+          <option>Expert</option>
+          <option>Got it, mostly</option>
+          <option>Still mastering</option>
+          <option>Playing catchup</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Group Size</label>
+          <select class="form-control" id="select">
+            <option>2 members</option>
+            <option>3 members</option>
+            <option>4 members</option>
+            <option>5 members</option>
+          </select>
+      </div>
+
+      <div class="form-group pull-right">
+        <a href="group" class="btn btn-default">Cancel</a>
+        <a href="studyGroup" class="btn btn-success">Go!</a>
+      </div>
+      <br><br><br>
+</form>
+</div>

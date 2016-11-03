@@ -1,6 +1,13 @@
-var data = require('../group.json');
+var data = require('../data.json');
 
-exports.view = function(req, res){
-	//console.log(data);
-	res.render('group', data);
+exports.create = function(req, res){
+  res.render('group/create', data);
+};
+
+exports.all = function(req, res){
+  res.render('group/all', data);
+};
+
+exports.show = function(req, res){
+  res.render('group/show', data);
 };

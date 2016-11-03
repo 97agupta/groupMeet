@@ -1,0 +1,54 @@
+{
+  "groups" : [
+    {
+      "id": 1,
+      "name": "CSE 30",
+      "active": false,
+      "user_ids": [1, 2, 3]
+    }, 
+
+    {
+      "id": 2,
+      "name": "CSE 100",
+      "active": true,
+      "user_ids": [1, 2, 3]
+    }, 
+
+    {
+      "id": 3,
+      "name": "CSE 101",
+      "active": true,
+      "user_ids": [1, 2, 3]
+    }
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "name": "Rishi",
+      "picture": "http://i.imgur.com/UQX0f4X.jpg",
+      "bio": "is awesome",
+      "phone-number": "4089816464"
+    }, 
+    {
+      "id": 2,
+      "name": "Aman"
+    },
+    {
+      "id": 3,
+      "name": "Robin"
+    }
+  ],
+
+  "courses": [
+    { "name": "CSE 30" }, 
+    { "name": "CSE 100" }, 
+    { "name": "CSE 110" }, 
+    { "name": "CSE 120" }
+  ],
+
+  "quarters": [
+    { "quarter": "Winter 2016" },
+    { "quarter": "Spring 2017" }
+  ]
+}
