@@ -5,5 +5,16 @@ exports.create = function(req, res){
 };
 
 exports.show = function(req, res){
-  res.render('user/show', data);
+  var id = req.params.id;
+  var results = [];
+  var searchField = "id";
+  var searchVal = id;
+  for (var i=0 ; i < data.users.length ; i++)
+  {
+    if (data.users[i][searchField] == searchVal) {
+        results.push(data.users[i]);
+    }
+  }
+  //console.log(results);
+  res.render('user/show', results[0]);
 };

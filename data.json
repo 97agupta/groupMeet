@@ -52,7 +52,8 @@
       "name": "Rishi",
       "picture": "http://i.imgur.com/UQX0f4X.jpg",
       "bio": "is awesome",
-      "phone-number": "4089816464"
+      "phone-number": "4089816464",
+      "current_user": 1
     },
     {
       "id": 2,
@@ -90,7 +91,6 @@
       "id": 10,
       "name": "Stella"
     }
-
   ],
 
   "courses": [
@@ -101,7 +101,7 @@
     { "name": "VIS 30" },
     { "name": "WARR 11A" },
     { "name": "TDGE 127" },
-    { "name": "BENG 1" },
+    { "name": "BENG 1" }
   ],
 
   "quarters": [

@@ -1,9 +1,10 @@
-<h2>CSE 30 Group 729</h2>
+<h2>{{groups.name}}</h2>
 <div class="well">
     <h4>Members<h4>
-    <ul>
-        <li><a href="other_profile">Aman Gupta</a></li>
-        <li><a href="other_profile">Rishi Dhanaraj</a></li>
+      <ul>
+      {{#each members}}
+            <li><a href="/users/{{id}}/">{{name}}</a></li>
+      {{/each}}
     </ul>
 </div>
 <div class="well" style="text-align:center">
@@ -16,7 +17,6 @@
 
 <div class="container" style="text-align:center">
     <a class="btn btn-default" href="/groups/all/">Home </a>
-    <a class="btn btn-default" href="user/{{id}}">Profile</a>
+    <a class="btn btn-default" href="/user/1/">Profile</a>
     <a class="btn btn-default" href="/">Log Out</a>
 </div>
-user/{{id}}

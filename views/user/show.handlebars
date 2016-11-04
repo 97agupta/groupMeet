@@ -1,8 +1,6 @@
-<a href="#" class="">
-    <img src="{{user.picture}}" width="200px">
-</a>
 
-<h2>{{user.name}}</h2>
+<script src="/js/bootstrap.min.js"></script>
+<h2>{{name}}</h2>
 <h4>Computer Science</h4>
 {{#if current_user }}
   <a class="btn btn-default">Edit</a>
@@ -11,12 +9,12 @@
 <br>
 <div class="well">
     <h4>Bio</h4>
-    <p>{{user.bio}}/</p>
+    <p>{{bio}}/</p>
 </div>
 
 <br>
 <div class="container" style="text-align:center">
     <a class="btn btn-default" href="/groups/all/">Home </a>
-    <a class="btn btn-default" href="user/{{id}}">Profile</a>
+    <a class="btn btn-default" href="users/1/">Profile</a>
     <a class="btn btn-default" href="/">Log Out</a>
 </div> <br><br>
