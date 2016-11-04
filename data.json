@@ -4,21 +4,45 @@
       "id": 1,
       "name": "CSE 30",
       "active": false,
-      "user_ids": [1, 2, 3]
-    }, 
+      "user_ids": [1, 2, 6]
+    },
 
     {
       "id": 2,
       "name": "CSE 100",
       "active": true,
-      "user_ids": [1, 2, 3]
-    }, 
+      "user_ids": [1, 2, 4]
+    },
 
     {
       "id": 3,
       "name": "CSE 101",
       "active": true,
-      "user_ids": [1, 2, 3]
+      "user_ids": [8, 2, 3]
+    },
+    {
+      "id": 4,
+      "name": "Mad House",
+      "active": true,
+      "user_ids": [1, 9, 10]
+    },
+    {
+      "id": 5,
+      "name": "Hungry for Trouble",
+      "active": true,
+      "user_ids": [4,6,8]
+    },
+    {
+      "id": 6,
+      "name": "Lucky Charms",
+      "active": true,
+      "user_ids": [2,5,7]
+    },
+    {
+      "id": 7,
+      "name": "Grumpy Grannies",
+      "active": true,
+      "user_ids": [4,5,9]
     }
   ],
 
@@ -29,7 +53,7 @@
       "picture": "http://i.imgur.com/UQX0f4X.jpg",
       "bio": "is awesome",
       "phone-number": "4089816464"
-    }, 
+    },
     {
       "id": 2,
       "name": "Aman"
@@ -37,14 +61,47 @@
     {
       "id": 3,
       "name": "Robin"
+    },
+    {
+      "id": 4,
+      "name": "Jean-Jaqures"
+    },
+    {
+      "id": 5,
+      "name": "Sammy"
+    },
+    {
+      "id": 6,
+      "name": "Kat"
+    },
+    {
+      "id": 7,
+      "name": "Ted"
+    },
+    {
+      "id": 8,
+      "name": "House"
+    },
+    {
+      "id": 9,
+      "name": "Nick"
+    },
+    {
+      "id": 10,
+      "name": "Stella"
     }
+
   ],
 
   "courses": [
-    { "name": "CSE 30" }, 
-    { "name": "CSE 100" }, 
-    { "name": "CSE 110" }, 
-    { "name": "CSE 120" }
+    { "name": "CSE 30" },
+    { "name": "CSE 100" },
+    { "name": "CSE 110" },
+    { "name": "CSE 120" },
+    { "name": "VIS 30" },
+    { "name": "WARR 11A" },
+    { "name": "TDGE 127" },
+    { "name": "BENG 1" },
   ],
 
   "quarters": [

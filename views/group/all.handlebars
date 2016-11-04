@@ -7,7 +7,7 @@
     <ul>
       {{#each groups}}
         {{#if active}}
-            <li><a href="studyGroup">{{name}} ({{user_ids.length}} members)</a></li>
+            <li><a href="/groups/{{id}}/">{{name}} ({{user_ids.length}} members)</a></li>
         {{/if}}
       {{/each}}
     </ul>
@@ -18,14 +18,14 @@
     <ul>
       {{#each groups}}
         {{#unless active}}
-            <li><a href="studyGroup">{{name}} ({{user_ids.length}} members)</a></li>
+            <li><a href="/groups/{{id}}">{{name}} ({{user_ids.length}} members)</a></li>
         {{/unless}}
       {{/each}}
     </ul>
 </div>
 
 <div class="container" style="text-align:center">
-    <a class="btn btn-default" href="group">Home </a>
-    <a class="btn btn-default" href="profile">Profile</a>
+    <a class="btn btn-default" href="/groups/all/">Home </a>
+    <a class="btn btn-default" href="/user/{{id}}">Profile</a>
     <a class="btn btn-default" href="/">Log Out</a>
 </div>
