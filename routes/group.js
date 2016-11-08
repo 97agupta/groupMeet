@@ -8,6 +8,40 @@ exports.all = function(req, res){
   res.render('group/all', data);
 };
 
+exports.find = function(req, res){
+
+  var group = {
+    "id": 100,
+    "name": "New Group",
+    "active": true,
+    "user_ids": [101,102,103]
+  };
+  var members_array = [
+    {
+      "id": 101,
+      "name": "New Memeber 1"
+    },
+    {
+      "id": 102,
+      "name": "New Member 2"
+    },
+    {
+      "id": 103,
+      "name": "New Member 3"
+    }
+
+  ];
+
+  data.groups.push(group);
+  data.users.push(members_array[0]);
+  data.users.push(members_array[1]);
+  data.users.push(members_array[2]);
+
+  var final = {groups:group, members:members_array};
+
+  res.render('group/show', final)
+}
+
 exports.show = function(req, res){
   var id = req.params.id;
   var group ;
