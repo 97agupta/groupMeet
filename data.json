@@ -11,7 +11,15 @@
       "id": 2,
       "name": "CSE 100",
       "active": true,
-      "user_ids": [1, 2, 4]
+      "user_ids": [1, 2, 4],
+      "num_time": 2,
+      "num_personality": 3,
+      "num_loc": 2,
+      "num_chill": 3,
+      "chill": "Active",
+      "loc": "Warren",
+      "time": "Night",
+      "personality": "Ambivert"
     },
 
     {
