@@ -10,6 +10,8 @@ function initializePage() {
 		e.preventDefault();
 		$("#edit").hide();
 		$("#finish").show();
+		$(".study-prefs").hide();
+		$(".study-style").show();
 
 		$(".username").get(0).contentEditable = "true";
 		$(".bio").get(0).contentEditable = "true";
@@ -18,6 +20,9 @@ function initializePage() {
 
 	$("#finish").click(function(e) {
 		e.preventDefault();
+
+		$(".study-style").hide();
+		$(".study-prefs").show();
 
 		var newName = $(".username").text();
 		var newBio = $(".bio").text();

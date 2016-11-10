@@ -8,7 +8,6 @@
 <h4>Computer Science</h4>
 {{#if current_user }}
   <a class="btn btn-default" id="edit">Edit</a>
-  <a class="btn btn-default" id="finish" style="display:none">Finish</a>
 {{/if}}
 <br>
 <br>
@@ -16,9 +15,69 @@
     <h4>Bio</h4>
     
     <p class="bio">{{bio}}</p>
+    <div class="study-prefs">
+	    <p> Time Preference: {{study_pref.time}}</p>
+	    <p> Personality: {{study_pref.personality}}</p>
+	    <p> Preferred Location: {{study_pref.loc}}</p>
+	    <p> Preferred Noise Level: {{study_pref.chill}}</p>
+	</div>
+
+    <form class="study-style" style="display: none">
+
+	    <div class="form-group">
+	      <label class="control-label">Time Preference</label>
+	      <select class="form-control" id="select_time">
+	        <option>Morning</option>
+	        <option>Midday</option>
+	        <option>Afternoon</option>
+	        <option>Evening</option>
+	        <option>Night</option>
+	      </select>
+	    </div>
+
+	      <div class="form-group">
+	        <label class="control-label">Personality</label>
+	          <select class="form-control" id="select_personality">
+	            <option>Introvert</option>
+	            <option>Extrovert</option>
+	            <option>Ambivert</option>
+	          </select>
+	      </div>
+
+	      <div class="form-group">
+	        <label class="control-label">Preferred Location</label>
+	        <select class="form-control" id="select_loc">
+	          <option>ERC</option>
+	          <option>Marshall</option>
+	          <option>Muir</option>
+	          <option>Revelle</option>
+	          <option>Sixth</option>
+	          <option>Warren</option>
+	          <option>PC</option>
+	          <option>Geisel</option>
+	        </select>
+	      </div>
+
+	      <div class="form-group">
+	        <label class="control-label">Ambient Noise Level</label>
+	          <select class="form-control" id="select_chill">
+	            <option>None</option>
+	            <option>Low</option>
+	            <option>Medium</option>
+	            <option>High</option>
+          	</select>
+      	</div>
+      	<br><br><br>
+	</form>
 </div>
 
 <br>
+
+{{#if current_user }}
+  	<a class="btn btn-default" id="finish" style="display:none">Finish</a>
+{{/if}}
+
+
 <div class="container" style="text-align:center">
     <a class="btn btn-default" href="/groups/all/">Home </a>
     <a class="btn btn-default" href="/users/1/">Profile</a>
