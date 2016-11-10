@@ -4,7 +4,7 @@
 
     <div class="form-group">
       <label class="control-label">Course Name</label>
-      <select class="form-control" id="select">
+      <select class="form-control" id="select_class">
         {{#each courses}}
           <option>{{name}}</option>
         {{/each}}
@@ -13,7 +13,7 @@
 
       <div class="form-group">
         <label class="control-label">Frequency</label>
-          <select class="form-control" id="select">
+          <select class="form-control" id="select_freq">
             <option>once a week</option>
             <option>twice a week</option>
             <option>3 times a week</option>
@@ -22,7 +22,7 @@
 
       <div class="form-group">
         <label class="control-label">Comfort Level with Material</label>
-        <select class="form-control" id="select">
+        <select class="form-control" id="select_comfort">
           <option>Expert</option>
           <option>Got it, mostly</option>
           <option>Still mastering</option>
@@ -32,7 +32,7 @@
 
       <div class="form-group">
         <label class="control-label">Group Size</label>
-          <select class="form-control" id="select">
+          <select class="form-control" id="select_members">
             <option>2 members</option>
             <option>3 members</option>
             <option>4 members</option>
@@ -42,14 +42,32 @@
 
       <div class="form-group pull-right">
         <a href="/groups/all" class="btn btn-default">Cancel</a>
-        <a href="/groups/find" class="btn btn-success" id="go_button">Go!</a>
+        <a href="" class="btn btn-success" id="go_button">Go!</a>
       </div>
       <br><br><br>
 </form>
 </div>
 
  <script language="JavaScript">
+ var freq = document.getElementById('select_freq').value;
+ var members = document.getElementById('select_members').value;
+ var comfort = document.getElementById('select_comfort').value;
+ var chosenClass = document.getElementById('select_class').value;
+ var myData = {"frequency":freq, "members":members, "comfort":comfort, "class":chosenClass }
  $( "#go_button" ).click(function() {
+   $.ajax({
+            type: "GET",
+            url: "/groups/find",
+            dataType: "json",
+            data: myData,
+            success: function (data) {
+               alert('Success');
+
+            },
+            error: function () {
+             alert('Error');
+            }
+        });
   });
  </script>
 

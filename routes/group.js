@@ -8,7 +8,12 @@ exports.all = function(req, res){
   res.render('group/all', data);
 };
 
-exports.find = function(req, res){
+exports.find = function(myData){
+
+  var myQuery = myData.query;
+  var frequency = myQuery.frequency;
+  var members = myQuery.members;
+  var comfort = myQuery.comfort;
 
   var group = {
     "id": 100,
