@@ -49,19 +49,19 @@
   "users": [
     {
       "id": 1,
-      "name": "Rishi",
-      "picture": "http://i.imgur.com/UQX0f4X.jpg",
+      "name": "Robin",
       "bio": "is awesome",
       "phone-number": "4089816464",
       "current_user": 1
     },
     {
       "id": 2,
-      "name": "Aman"
+      "name": "Aman",
+      "bio": "needs coffee"
     },
     {
       "id": 3,
-      "name": "Robin"
+      "name": "Rishi"
     },
     {
       "id": 4,

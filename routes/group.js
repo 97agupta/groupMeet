@@ -19,7 +19,7 @@ exports.find = function(req, res){
   var members_array = [
     {
       "id": 101,
-      "name": "New Memeber 1"
+      "name": "New Member 1"
     },
     {
       "id": 102,
