@@ -51,13 +51,24 @@
       "id": 1,
       "name": "Robin",
       "bio": "is awesome",
-      "phone-number": "4089816464",
+      "study_pref": {
+        "time": "Evening",
+        "personality": "Sassy",
+        "loc": "Warren",
+        "chill": "Medium"
+      },
       "current_user": 1
     },
     {
       "id": 2,
       "name": "Aman",
-      "bio": "needs coffee"
+      "bio": "needs coffee",
+      "study_pref": {
+        "time": "Evening",
+        "personality": "Basic",
+        "loc": "Starbucks",
+        "chill": "SF Hipster"
+      },
     },
     {
       "id": 3,
