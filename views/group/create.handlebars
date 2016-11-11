@@ -41,33 +41,58 @@
       </div>
 
       <div class="form-group pull-right">
-        <a href="/groups/all" class="btn btn-default">Cancel</a>
-        <a href="" class="btn btn-success" id="go_button">Go!</a>
+        <a href="/groups/all/" class="btn btn-default">Cancel</a>
+        <button class="btn btn-success" id="go_button">Go!</button>
       </div>
       <br><br><br>
 </form>
 </div>
 
  <script language="JavaScript">
- var freq = document.getElementById('select_freq').value;
- var members = document.getElementById('select_members').value;
- var comfort = document.getElementById('select_comfort').value;
- var chosenClass = document.getElementById('select_class').value;
- var myData = {"frequency":freq, "members":members, "comfort":comfort, "class":chosenClass }
+
  $( "#go_button" ).click(function() {
-   $.ajax({
+
+   var selectedClass = document.getElementById('select_class').value;
+
+   var freq = document.getElementById('select_freq').value;
+   var freqIndex = document.getElementById('select_freq').selectedIndex;
+
+   var members = document.getElementById('select_members').value;
+   var membersIndex = document.getElementById('select_members').selectedIndex;
+   var numMembers = membersIndex + 2;
+
+   var randomMembers = []
+   while(randomMembers.length < numMembers){
+      var randomnumber = Math.ceil(Math.random()*100)
+      if(randomMembers.indexOf(randomnumber) > -1) continue;
+      randomMembers[randomMembers.length] = randomnumber;
+    }
+
+
+
+   var comfort = document.getElementById('select_comfort').value;
+
+   var chosenClass = document.getElementById('select_class').value;
+
+   var myData = {"class":selectedClass, "frequency":freq, "membersIndex":numMembers, "comfort":comfort, "class":chosenClass, "randomMembers": randomMembers, "selectedClass":selectedClass }
+
+
+    $.ajax({
             type: "GET",
             url: "/groups/find",
-            dataType: "json",
             data: myData,
             success: function (data) {
-               alert('Success');
+               //alert('Success');
+               window.location = '/groups/100/';
 
             },
-            error: function () {
-             alert('Error');
+            error: function (data) {
+             console.log(data);
+             alert('GROUP ERROR');
             }
         });
+
+
   });
  </script>
 

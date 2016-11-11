@@ -1,4 +1,5 @@
 var data = require('../data.json');
+var names = require('../names.json');
 
 exports.create = function(req, res){
   res.render('group/create', data);
@@ -8,46 +9,68 @@ exports.all = function(req, res){
   res.render('group/all', data);
 };
 
-exports.find = function(myData){
+exports.find = function(myData, res){
+
 
   var myQuery = myData.query;
+  var className = myQuery.selectedClass;
+  className = className + " Group 101";
   var frequency = myQuery.frequency;
-  var members = myQuery.members;
+  var membersIndex = myQuery.membersIndex;
+  console.log(myQuery.membersIndex);
   var comfort = myQuery.comfort;
+  var randomMembers = myQuery.randomMembers;
+
+  var searchField = "id";
+  var results = [];
+  var searchVal = 1;
+  for (var i=0 ; i < data.users.length ; i++)
+  {
+    if (data.users[i][searchField] == searchVal) {
+        results.push(data.users[i]);
+    }
+  }
 
   var group = {
     "id": 100,
-    "name": "New Group",
+    "name": className,
     "active": true,
-    "user_ids": [101,102,103]
+    "user_ids": [101,102,103],
+    "num_time" : membersIndex,
+    "num_personality" : membersIndex,
+    "num_loc": membersIndex,
+    "num_chill": membersIndex,
+    "time": results[0]["study_pref"]["time"],
+    "personality": results[0]["study_pref"]["personality"],
+    "loc": results[0]["study_pref"]["loc"],
+    "chill": results[0]["study_pref"]["chill"]
   };
-  var members_array = [
-    {
-      "id": 101,
-      "name": "New Member 1"
-    },
-    {
-      "id": 102,
-      "name": "New Member 2"
-    },
-    {
-      "id": 103,
-      "name": "New Member 3"
-    }
 
-  ];
+  var members_array = [];
+  var starting = 101;
+
+  for(var i = 0; i < membersIndex; i++){
+
+    members_array[i] = {
+      "id": starting,
+      "name": names[randomMembers[i]]["name"]
+    };
+
+    data.users.push(members_array[i]);
+
+    starting ++;
+  }
 
   data.groups.push(group);
-  data.users.push(members_array[0]);
-  data.users.push(members_array[1]);
-  data.users.push(members_array[2]);
+
 
   var final = {groups:group, members:members_array};
 
-  res.render('group/show', final)
+  res.render('group/show', final);
 }
 
 exports.show = function(req, res){
+  //console.log(data);
   var id = req.params.id;
   var group ;
   var members ;
