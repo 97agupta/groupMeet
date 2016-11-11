@@ -44,7 +44,8 @@ app.get('/groups/all/', group.all);
 app.get('/users/:id/', user.show);
 app.get('/groups/:id/', group.show);
 app.get('/groups/new', group.create);
-app.get('/groups/find', group.find); 
+app.get('/groups/find', group.find);
+app.get('/users/edit', user.edit);  
 
 app.locals.current_user_id = 1;
 // Example route

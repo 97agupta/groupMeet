@@ -53,5 +53,33 @@ function initializePage() {
 			$(".username").get(0).contentEditable = "false";
 			$(".bio").get(0).contentEditable = "false";
 		}
+
+	  var time = document.getElementById('select_time').value;
+
+	  var personality = document.getElementById('select_personality').value;
+
+	  var loc = document.getElementById('select_loc').value;
+
+	  var chill = document.getElementById('select_chill').value;
+
+	  var myData = {"time":time, "personality":personality, "loc":loc, "chill":chill}
+
+	    //alert("Button was Pressed");
+
+
+	     $.ajax({
+	             type: "GET",
+	             url: "/users/edit",
+	             data: myData,
+	             success: function (data) {
+	                //alert('Success');
+									window.location = '/users/1/';
+
+	             },
+	             error: function () {
+	              alert('Error');
+	             }
+	         });
+
 	});
 }
