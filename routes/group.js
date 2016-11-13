@@ -9,12 +9,52 @@ exports.all = function(req, res){
   res.render('group/all', data);
 };
 
+exports.openNew = function(req, res){
+  console.log("Entering OpenNew");
+  console.log(data);
+  var maxGroup = 0;
+  for(var i = 0; i < data.groups.length; i++){
+    if(data.groups[i]["id"] > maxGroup){
+      maxGroup = data.groups[i]["id"];
+    }
+  }
+
+  var id = maxGroup;
+  var group ;
+  var members ;
+  var members_array = [];
+  var searchField = "id";
+  var searchVal = id;
+  for (var i=0 ; i < data.groups.length ; i++)
+  {
+    if (data.groups[i][searchField] == searchVal) {
+        group = (data.groups[i]);
+        //console.log(data.groups[i]);
+        members = data.groups[i]["user_ids"];
+    }
+  }
+  console.log(members);
+  for(var j = 0; j < members.length; j++){
+    for (var i=0 ; i < data.users.length ; i++)
+    {
+      if (data.users[i][searchField] == members[j]) {
+          console.log(members[j]);
+          members_array.push(data.users[i]);
+      }
+    }
+  }
+  //console.log(results);
+  var final = {groups:group, members:members_array};
+  //console.log(final);
+  res.render('group/show', final);
+
+};
+
 exports.find = function(myData, res){
 
 
   var myQuery = myData.query;
   var className = myQuery.selectedClass;
-  className = className + " Group 101";
   var frequency = myQuery.frequency;
   var membersIndex = myQuery.membersIndex;
   console.log(myQuery.membersIndex);
@@ -24,15 +64,27 @@ exports.find = function(myData, res){
   var searchField = "id";
   var results = [];
   var searchVal = 1;
+  var maxUser = 0;
+  var maxGroup = 0;
   for (var i=0 ; i < data.users.length ; i++)
   {
     if (data.users[i][searchField] == searchVal) {
         results.push(data.users[i]);
     }
+    if(data.users[i][searchField] > maxUser){
+      maxUser = data.users[i][searchField];
+    }
+  }
+  for(var i = 0; i < data.groups.length; i++){
+    if(data.groups[i]["id"] > maxGroup){
+      maxGroup = data.groups[i]["id"];
+    }
   }
 
+  className = className + " Group " + (maxGroup + 1);
+
   var group = {
-    "id": 100,
+    "id": maxGroup + 1,
     "name": className,
     "active": true,
     "user_ids": [101,102,103],
@@ -47,10 +99,11 @@ exports.find = function(myData, res){
   };
 
   var members_array = [];
-  var starting = 101;
+  var userIds=[];
+  var starting = maxUser + 1;
 
   for(var i = 0; i < membersIndex; i++){
-
+    userIds[i] = starting;
     members_array[i] = {
       "id": starting,
       "name": names[randomMembers[i]]["name"]
@@ -61,17 +114,20 @@ exports.find = function(myData, res){
     starting ++;
   }
 
+  group["user_ids"] = userIds;
+
   data.groups.push(group);
 
 
   var final = {groups:group, members:members_array};
 
-  res.render('group/show', final);
-}
+  res.render('group/all', data);
+};
 
 exports.show = function(req, res){
-  //console.log(data);
+  console.log("Entering Show");
   var id = req.params.id;
+  console.log("Id is " + id);
   var group ;
   var members ;
   var members_array = [];
