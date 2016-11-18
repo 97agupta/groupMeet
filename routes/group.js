@@ -106,7 +106,14 @@ exports.find = function(myData, res){
     userIds[i] = starting;
     members_array[i] = {
       "id": starting,
-      "name": names[randomMembers[i]]["name"]
+      "name": names[randomMembers[i]]["name"],
+      "bio": "Is lazy and hasn't added a bio",
+      "study_pref":{
+        "time": results[0]["study_pref"]["time"],
+        "personality": results[0]["study_pref"]["personality"],
+        "loc": results[0]["study_pref"]["loc"],
+        "chill": results[0]["study_pref"]["chill"]
+      }
     };
 
     data.users.push(members_array[i]);
