@@ -9,6 +9,10 @@ exports.all = function(req, res){
   res.render('group/all', data);
 };
 
+exports.all2 = function(req, res){
+  res.render('group/all2', data);
+};
+
 exports.openNew = function(req, res){
   console.log("Entering OpenNew");
   console.log(data);

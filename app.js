@@ -39,6 +39,7 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', home.show);
+app.get('/groups/all2/', group.all2);
 app.get('/users/new', user.create);
 app.get('/groups/all/', group.all);
 app.get('/users/:id/', user.show);
@@ -46,7 +47,7 @@ app.get('/groups/:id/', group.show);
 app.get('/groups/new', group.create);
 app.get('/groups/find', group.find);
 app.get('/users/edit', user.edit);
-app.get('/groups/openNew', group.openNew); 
+app.get('/groups/openNew', group.openNew);
 
 app.locals.current_user_id = 1;
 // Example route

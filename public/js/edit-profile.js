@@ -30,7 +30,7 @@ function initializePage() {
 		var newName = $("#name").val();
 		var newBio = $("#bio").val();
 
-		/*if( newName == "" || newBio == ""){
+		if( newName == "" || newBio == ""){
 			if( newName == ""){
 				$(".username").text("Please fill out this field");
 				$(".username").css('color', 'yellow');
@@ -55,7 +55,7 @@ function initializePage() {
 
 			$(".username").get(0).contentEditable = "false";
 			$(".bio").get(0).contentEditable = "false";
-		}*/
+		}
 
 	  var time = document.getElementById('select_time').value;
 
