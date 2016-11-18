@@ -13,8 +13,11 @@ function initializePage() {
 		$(".study-prefs").hide();
 		$(".study-style").show();
 
-		$(".username").get(0).contentEditable = "true";
-		$(".bio").get(0).contentEditable = "true";
+		var firstName = $(".username").text();;
+		$(".username").replaceWith( "<input type=text id='name' value=" + firstName + ">" );
+		var bio = $(".bio").text();
+		$(".bio").replaceWith("<input text=type id='bio' value=" + bio + ">");
+		//$(".bio").get(0).contentEditable = "true";
 
 	});
 
@@ -24,10 +27,10 @@ function initializePage() {
 		$(".study-style").hide();
 		$(".study-prefs").show();
 
-		var newName = $(".username").text();
-		var newBio = $(".bio").text();
+		var newName = $("#name").val();
+		var newBio = $("#bio").val();
 
-		if( newName == "" || newBio == ""){
+		/*if( newName == "" || newBio == ""){
 			if( newName == ""){
 				$(".username").text("Please fill out this field");
 				$(".username").css('color', 'yellow');
@@ -52,7 +55,7 @@ function initializePage() {
 
 			$(".username").get(0).contentEditable = "false";
 			$(".bio").get(0).contentEditable = "false";
-		}
+		}*/
 
 	  var time = document.getElementById('select_time').value;
 
@@ -62,9 +65,9 @@ function initializePage() {
 
 	  var chill = document.getElementById('select_chill').value;
 
-	  var myData = {"time":time, "personality":personality, "loc":loc, "chill":chill}
+	  var myData = {"time":time, "personality":personality, "loc":loc, "chill":chill, "name":newName, "bio": newBio}
 
-	    //alert("Button was Pressed");
+	  //alert(newBio);
 
 
 	     $.ajax({
