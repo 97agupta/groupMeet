@@ -6,7 +6,7 @@ exports.create = function(req, res){
 };
 
 exports.all = function(req, res){
-  data['og'] = true
+  data['og'] = true;
   res.render('group/all', data);
 };
 
