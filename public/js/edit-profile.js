@@ -16,6 +16,7 @@ function initializePage() {
 		var firstName = $(".username").text();;
 		$(".username").replaceWith( "<input type=text id='name' value=" + firstName + ">" );
 		var bio = $(".bio").text();
+		console.log(bio);
 		$(".bio").replaceWith("<input text=type id='bio' value=" + bio + ">");
 		//$(".bio").get(0).contentEditable = "true";
 
