@@ -11,6 +11,7 @@ exports.all = function(req, res){
 };
 
 exports.all2 = function(req, res){
+  data['og'] = false;
   res.render('group/all2', data);
 };
 
