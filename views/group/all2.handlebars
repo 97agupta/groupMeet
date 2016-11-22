@@ -29,6 +29,13 @@
 
 <div class="container" style="text-align:center">
      <a class="btn btn-default" href="/groups/all2/">Home </a>
-     <a class="btn btn-default" href="/users/1/">Profile</a>
+     <a class="btn btn-default" id="profileBtn" href="/users/1/">Profile</a>
      <a class="btn btn-default" href="/">Log Out</a>
  </div>
+
+ <script>
+  $('.navbar').hide();
+  $('#profileBtn').click(function() {
+    ga('send',  'event',  'button', 'click');
+  });
+</script>
